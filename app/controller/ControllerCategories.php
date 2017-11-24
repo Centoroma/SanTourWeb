@@ -26,4 +26,13 @@ class ControllerCategories extends Controller
         return $this->view->Render();
     }
 
+    public function add()
+    {
+        if(isset($_POST['submit'])) {
+            header("Location: /SanTourWeb/categories");
+        }
+
+        return $this->view->Render();
+    }
+
 }

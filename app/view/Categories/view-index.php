@@ -1,6 +1,6 @@
 <div class="container">
     <h1>All categories</h1></td>
-    <a class="btn waves-effect waves-light resa-btn" href="/resabike/users/add">Add a new categorie</a>
+    <a class="btn waves-effect waves-light resa-btn" href="/santourweb/categories/add">Add a new categorie</a>
     <table class="bordered">
         <thead>
         <tr>
