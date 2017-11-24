@@ -43,6 +43,13 @@ class FirebaseStub implements FirebaseInterface
         $this->setToken($token);
     }
 
+
+    // Kev
+    public function setFirebaseValue($path, $value, $firebase) {
+        $firebase->set($path, $value);
+    }
+
+
     /**
      * @param $token
      * @return null

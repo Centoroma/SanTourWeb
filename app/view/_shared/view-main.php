@@ -28,9 +28,25 @@
 
                     echo '<li ';
                     if ($act == 'index') {
-                        echo 'class="active"';
+                        echo '';
+                    }
+                    echo '><a href="/santourweb/tracks">Tracks</a></li>';
+
+                    echo '<li ';
+                    if ($act == 'index') {
+                        echo '';
+                    }
+                    echo '><a href="/santourweb/Categories">Categories</a></li>';
+
+                    echo '<li ';
+                    if ($act == 'index') {
+                        echo '';
                     }
                     echo '><a href="">About</a></li>';
+
+
+
+
                     echo '<li ';
                     ?>
                 </ul>
