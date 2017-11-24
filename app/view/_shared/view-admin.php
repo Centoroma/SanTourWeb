@@ -6,15 +6,15 @@
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="/santour/assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="/santour/assets/css/styles.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/santourweb/assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/santourweb/assets/css/styles.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
     <!--  Scripts-->
-    <script src="/santour/assets/js/jquery-3.2.1.min.js"></script>
-    <script src="/santour/assets/js/materialize.js"></script>
+    <script src="/santourweb/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="/santourweb/assets/js/materialize.js"></script>
     <script type="text/javascript"
-            src="/santour/library/php/traduction.php?lang=<?php echo $_SESSION['lang'] ?>"></script>
-    <script src="/santour/assets/js/santourjs.js"></script>
+            src="/santourweb/library/php/traduction.php?lang=<?php echo $_SESSION['lang'] ?>"></script>
+    <script src="/santourweb/assets/js/santourjs.js"></script>
 </head>
 <body>
 <header>

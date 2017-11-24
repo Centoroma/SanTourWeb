@@ -17,29 +17,38 @@ class ControllerIndex extends Controller
             Redirect::toAction('tracks');
 
         if (isset($_POST['submit'])) {
-            $error = false;
-            $users = $this->model->getAllUsers();
-            foreach ($users as $user) {
-                if ($_POST['pseudo'] == $user['pseudo']) {
-                    $password = $this->model->getPasswordByPseudo($user['pseudo']);
-                    if ($_POST['password'] == $password) {
-                        $_SESSION['connected'] = true;
-                        $_SESSION['user'] = $user;
-                        Redirect::toAction('tracks');
-                    }
-                } else
-                    $error = true;
-            }
-
-            if ($error)
-                Toast::message(__('The combination username/password does not match', true), 'red');
+            header("Location: /SanTourWeb/tracks");
+//            $error = false;
+//            $users = $this->model->getAllUsers();
+//            foreach ($users as $user) {
+//                if ($_POST['pseudo'] == $user['pseudo']) {
+//                    $password = $this->model->getPasswordByPseudo($user['pseudo']);
+//                    if ($_POST['password'] == $password) {
+//                        $_SESSION['connected'] = true;
+//                        $_SESSION['user'] = $user;
+//                        Redirect::toAction('tracks');
+//                    }
+//                } else
+//                    $error = true;
+//            }
+//
+//            if ($error)
+//                Toast::message(__('The combination username/password does not match', true), 'red');
         }
-        return $this->view->RenderPartial();
+        $this->view->SetLayout(APPPATH . DS . 'view' . DS . '_shared' . DS . 'view-main.php');
+        return $this->view->Render();
     }
 
     public function logout()
     {
         session_destroy();
         Redirect::toAction('tracks');
+    }
+
+    public function home()
+    {
+
+        return $this->view->Render();
+
     }
 }

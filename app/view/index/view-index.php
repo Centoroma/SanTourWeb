@@ -1,15 +1,10 @@
 
 <html>
+
 <head>
-    <!--Import Google Icon Font-->
-    <link href="/resabike/assets/css/icon.css" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="/resabike/assets/css/materialize.min.css" media="screen,projection"/>
-    <link rel="stylesheet" type="text/css" href="/resabike/assets/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="/resabike/assets/css/login.css">
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 </head>
+
 
 <body>
 <div class="login-page">
