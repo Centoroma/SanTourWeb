@@ -1,10 +1,11 @@
 <?php
 
-namespace ResaBike\App\Controller;
+namespace SanTourWeb\App\Controller;
 
-use ResaBike\Library\Mvc\Controller;
-use ResaBike\Library\Utils\Toast;
-use ResaBike\Library\Utils\Redirect;
+use SanTourWeb\Library\Mvc\Controller;
+use SanTourWeb\Library\Utils\Toast;
+use SanTourWeb\Library\Utils\Redirect;
+use SanTourWeb\Library\Php\FirebaseLib;
 
 
 class ControllerIndex extends Controller
@@ -13,11 +14,11 @@ class ControllerIndex extends Controller
     public function index()
     {
         //If the user is already connected, redirect to the books page
-        if (isset($_SESSION['connected']) && $_SESSION['connected'] == true)
-            Redirect::toAction('tracks');
-
-        if (isset($_POST['submit'])) {
-            header("Location: /SanTourWeb/tracks");
+//        if (isset($_SESSION['connected']) && $_SESSION['connected'] == true)
+//            Redirect::toAction('tracks');
+//
+//        if (isset($_POST['submit'])) {
+//            header("Location: /SanTourWeb/tracks");
 //            $error = false;
 //            $users = $this->model->getAllUsers();
 //            foreach ($users as $user) {
@@ -34,7 +35,7 @@ class ControllerIndex extends Controller
 //
 //            if ($error)
 //                Toast::message(__('The combination username/password does not match', true), 'red');
-        }
+//        }
         $this->view->SetLayout(APPPATH . DS . 'view' . DS . '_shared' . DS . 'view-main.php');
         return $this->view->Render();
     }
@@ -47,8 +48,6 @@ class ControllerIndex extends Controller
 
     public function home()
     {
-
         return $this->view->Render();
-
     }
 }

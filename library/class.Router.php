@@ -1,8 +1,8 @@
 <?php
-namespace ResaBike\Library;
+namespace SanTourWeb\Library;
 
-use ResaBike\Library\Mvc\View;
-use ResaBike\Library\Mvc\Model;
+use SanTourWeb\Library\Mvc\View;
+use SanTourWeb\Library\Mvc\Model;
 
 define('DEFAULT_CONTROLLER', 'index');
 define('DEFAULT_ACTION', 'index');
@@ -21,7 +21,7 @@ class Router{
 
 
 
-        $controllerClassName = 'ResaBike\\App\\Controller\\Controller'.ucfirst($ctr);
+        $controllerClassName = 'SanTourWeb\\App\\Controller\\Controller'.ucfirst($ctr);
 
         if(class_exists($controllerClassName)) {
             $model = self::GetModel($ctr);
@@ -37,7 +37,7 @@ class Router{
 	}
 
 	public static function GetModel($controller) {
-        $modelName = 'ResaBike\\App\\Model\\Model' . ucfirst($controller);
+        $modelName = 'SanTourWeb\\App\\Model\\Model' . ucfirst($controller);
         if (class_exists($modelName)) {
             return new $modelName();
         }

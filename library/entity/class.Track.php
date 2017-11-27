@@ -1,47 +1,100 @@
 <?php
-namespace ResaBike\Library\Entity;
 
-use ResaBike\Library\Database\DbConnect;
-use \PDO;
-class Track{
-    var $conn;
-    public function __construct(){
-        $this->conn=DbConnect::Get('Connection');
+namespace SanTourWeb\Library\Entity;
+
+class Track {
+    private $id;
+    private $name;
+    private $length;
+    private $timer;
+    private $pods;
+
+    /**
+     * Track constructor.
+     * @param $id
+     * @param $name
+     * @param $length
+     * @param $timer
+     * @param $pods
+     */
+    public function __construct($id, $name, $length, $timer/*, $pods*/)
+    {
+        $this->id = $id;
+        $this->name = $name;
+        $this->length = $length;
+        $this->timer = $timer;
+        //$this->pods = $pods;
     }
-    public function addZone($name){
-        $conn = $this->conn;
-        $sql="INSERT INTO zone(name) VALUES (:name)";
-        $stat = $conn->prepare($sql);
-        $stat->bindParam(":name",$name);
-        $stat->execute();
-        return $conn->lastInsertId();
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
     }
-    public function updateZone($id,$name){
-        $conn = $this->conn;
-        $sql="UPDATE zone SET name=:name WHERE id=:id";
-        $stat = $conn->prepare($sql);
-        $stat->bindParam(":id",$id);$stat->bindParam(":name",$name);
-        $stat->execute();
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
     }
-    public function deleteZone($id){
-        $conn = $this->conn;
-        $sql="DELETE FROM zone WHERE id=:id";
-        $stat = $conn->prepare($sql);
-        $stat->bindParam(":id",$id);
-        $stat->execute();
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
     }
-    public function getAllZone(){
-        $conn = $this->conn;
-        $sql="SELECT * FROM zone";
-        return $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+
+    /**
+     * @return mixed
+     */
+    public function getLength()
+    {
+        return $this->length;
     }
-    public function getZoneById($id){
-        $conn = $this->conn;
-        $sql="SELECT * FROM zone WHERE id=:id";
-        $stat = $conn->prepare($sql);
-        $stat->bindParam(":id",$id);
-        $stat->execute();
-        return $stat->fetch(PDO::FETCH_LAZY);
+
+    /**
+     * @param mixed $length
+     */
+    public function setLength($length)
+    {
+        $this->length = $length;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTimer()
+    {
+        return $this->timer;
+    }
+
+    /**
+     * @param mixed $timer
+     */
+    public function setTimer($timer)
+    {
+        $this->timer = $timer;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPods()
+    {
+        return $this->pods;
+    }
+
+    /**
+     * @param mixed $pods
+     */
+    public function setPods($pods)
+    {
+        $this->pods = $pods;
     }
 }
-?>

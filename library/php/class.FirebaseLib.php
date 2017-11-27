@@ -2,8 +2,6 @@
 
 namespace SanTourWeb\library\php;
 
-require_once __DIR__ . '/firebaseInterface.php';
-
 use \Exception;
 
 
@@ -27,6 +25,14 @@ class FirebaseLib implements FirebaseInterface
     private $_timeout;
     private $_token;
     private $_curlHandler;
+    private static $instance;
+
+    public static function getInstance()
+    {
+        if (self::$instance == null)
+            self::$instance = new FirebaseLib(FIREBASE_URL);
+        return self::$instance;
+    }
 
     /**
      * Constructor

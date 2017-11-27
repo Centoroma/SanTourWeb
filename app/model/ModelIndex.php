@@ -1,10 +1,10 @@
 <?php
 
-namespace ResaBike\App\Model;
+namespace SanTourWeb\App\Model;
 
-use ResaBike\Library\Mvc\Model;
-use ResaBike\Library\Entity\Book;
-use ResaBike\Library\Entity\Station;
+use SanTourWeb\Library\Mvc\Model;
+use SanTourWeb\Library\Entity\Book;
+use SanTourWeb\Library\Entity\Station;
 
 class ModelIndex extends Model
 {

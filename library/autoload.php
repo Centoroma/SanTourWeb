@@ -1,6 +1,6 @@
 <?php
 function loadClass($className) {
-    $prefix = "ResaBike\\";
+    $prefix = "SanTourWeb\\";
     $className = substr($className, strlen($prefix), strlen($className));
     $fileName = '';
 

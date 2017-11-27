@@ -1,10 +1,10 @@
 <?php
 
-namespace ResaBike\App\Controller;
+namespace SanTourWeb\App\Controller;
 
-use ResaBike\Library\Mvc\Controller;
-use ResaBike\Library\Utils\Toast;
-use ResaBike\Library\Utils\Redirect;
+use SanTourWeb\Library\Mvc\Controller;
+use SanTourWeb\Library\Utils\Toast;
+use SanTourWeb\Library\Utils\Redirect;
 
 
 class ControllerCategories extends Controller
@@ -20,7 +20,7 @@ class ControllerCategories extends Controller
     public function edit()
     {
         if(isset($_POST['submit'])) {
-       header("Location: /SanTourWeb/categories");
+            Redirect::toAction('categories');
         }
 
         return $this->view->Render();
@@ -29,7 +29,7 @@ class ControllerCategories extends Controller
     public function add()
     {
         if(isset($_POST['submit'])) {
-            header("Location: /SanTourWeb/categories");
+            Redirect::toAction('categories');
         }
 
         return $this->view->Render();

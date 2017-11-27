@@ -6,14 +6,14 @@
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="/santourweb/assets/css/materialize.css" rel="stylesheet" media="screen,projection"/>
-    <link href="/santourweb/assets/css/styles.css" rel="stylesheet" media="screen,projection"/>
+    <link href="<?php echo ABSURL;?>/assets/css/materialize.css" rel="stylesheet" media="screen,projection"/>
+    <link href="<?php echo ABSURL;?>/assets/css/styles.css" rel="stylesheet" media="screen,projection"/>
 
     <!--  Scripts-->
-    <script src="/santourweb/assets/js/jquery-3.2.1.min.js"></script>
-    <script src="/santourweb/assets/js/materialize.js"></script>
-    <script type="text/javascript" src="/santourweb/library/php/traduction.php"></script>
-    <script src="/santourweb/assets/js/santourjs.js"></script>
+    <script src="<?php echo ABSURL;?>/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="<?php echo ABSURL;?>/assets/js/materialize.js"></script>
+    <script type="text/javascript" src="<?php echo ABSURL;?>/library/php/traduction.php"></script>
+    <script src="<?php echo ABSURL;?>/assets/js/santourjs.js"></script>
 </head>
 <body>
 <header>
@@ -30,13 +30,13 @@
                     if ($act == 'index') {
                         echo '';
                     }
-                    echo '><a href="/santourweb/tracks">Tracks</a></li>';
+                    echo '><a href="'.ABSURL.'/tracks">Tracks</a></li>';
 
                     echo '<li ';
                     if ($act == 'index') {
                         echo '';
                     }
-                    echo '><a href="/santourweb/Categories">Categories</a></li>';
+                    echo '><a href="'.ABSURL.'/categories">categories</a></li>';
 
                     echo '<li ';
                     if ($act == 'index') {
@@ -78,15 +78,15 @@
                     if ($_SESSION['lang'] == 'de')
                         echo '<li class="resa-disabled">German</li>';
                     else
-                        echo '<li><a class="white-text" href="/resabike/language?lang=de">German</a></li>';
+                        echo '<li><a class="white-text" href="'.ABSURL.'/language?lang=de">German</a></li>';
                     if ($_SESSION['lang'] == 'en')
                         echo '<li class="resa-disabled">English</li>';
                     else
-                        echo '<li><a class="white-text" href="/resabike/language?lang=en">English</a></li>';
+                        echo '<li><a class="white-text" href="'.ABSURL.'/language?lang=en">English</a></li>';
                     if ($_SESSION['lang'] == 'fr')
                         echo '<li class="resa-disabled">French</li>';
                     else
-                        echo '<li><a class="white-text" href="/resabike/language?lang=fr">French</a></li>';
+                        echo '<li><a class="white-text" href="'.ABSURL.'/language?lang=fr">French</a></li>';
                     ?>
                 </ul>
             </div>
@@ -107,7 +107,7 @@
     </div>
 </footer>
 <?php
-echo \ResaBike\Library\Utils\Toast::displayMessages();
+echo \SanTourWeb\Library\Utils\Toast::displayMessages();
 ?>
 </body>
 </html>

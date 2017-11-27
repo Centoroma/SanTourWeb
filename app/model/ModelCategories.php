@@ -6,7 +6,7 @@
  * Time: 12:17
  */
 
-namespace ResaBike\App\Model;
+namespace SanTourWeb\App\Model;
 
 
 class ModelCategories

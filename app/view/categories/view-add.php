@@ -20,7 +20,7 @@
                 </div>
             </div>
             <button class="btn waves-effect waves-light resa-btn" name="submit" type="submit">Confirme</button>
-            <a href="/santourweb/categories" class="btn waves-effect waves-light resa-btn">Cancel</a>
+            <a href="<?php echo ABSURL;?>/categories" class="btn waves-effect waves-light resa-btn">Cancel</a>
         </form>
     </div>
 </div>

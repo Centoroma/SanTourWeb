@@ -1,17 +1,29 @@
 <?php
 
-namespace ResaBike\App\Controller;
+namespace SanTourWeb\App\Controller;
 
-use ResaBike\Library\Mvc\Controller;
-use ResaBike\Library\Utils\Toast;
-use ResaBike\Library\Utils\Redirect;
+use SanTourWeb\Library\Mvc\Controller;
+use SanTourWeb\Library\Utils\Toast;
+use SanTourWeb\Library\Utils\Redirect;
 
 class ControllerTracks extends Controller
 {
     public function index()
     {
-
+        $tracks = $this->model->getTracks();
+        $this->view->Set('tracks', $tracks);
         return $this->view->Render();
+    }
+
+    public function details()
+    {
+        if(!isset($_GET['id']) || empty($_GET['id']))
+            Redirect::toLastPage();
+        else {
+            $track = $this->model->getTrackById($_GET['id']);
+            $this->view->Set('track', $track);
+            return $this->view->Render();
+        }
     }
 
     public function delete()
@@ -29,12 +41,12 @@ class ControllerTracks extends Controller
 
     public function edit()
     {
-        if(isset($_POST['submit'])) {
+        if (isset($_POST['submit'])) {
 
             //$this->model->addUser($_POST['idRole'], null, $_POST['pseudo'], "pass", $_POST['email']);
 
             //$this->model->addUser($_POST['idRole'], $_POST['idZone'], $_POST['pseudo'], "pass", $_POST['email']);
-            header("Location: /SanTourWeb/tracks");
+            Redirect::toAction('tracks');
         }
 
         return $this->view->Render();

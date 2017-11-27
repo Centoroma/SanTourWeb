@@ -21,7 +21,7 @@
                         <label class="active" for="password">Password</label>
                     </div>
                 </div>
-                <a href="/resabike/" class="waves-effect waves-light btn btn-large resa-btn">
+                <a href="<?php echo ABSURL;?>/" class="waves-effect waves-light btn btn-large resa-btn">
                     <!--<i class="material-icons right">undo</i>-->
                     Back
                 </a>
@@ -35,10 +35,10 @@
 </div>
 
 <!--Import jQuery before materialize.js-->
-<script src="/resabike/assets/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/resabike/assets/js/materialize.min.js"></script>
+<script src="<?php echo ABSURL;?>/assets/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="<?php echo ABSURL;?>/assets/js/materialize.min.js"></script>
 <?php
-echo \ResaBike\Library\Utils\Toast::displayMessages();
+echo \SanTourWeb\Library\Utils\Toast::displayMessages();
 ?>
 </body>
 </html>

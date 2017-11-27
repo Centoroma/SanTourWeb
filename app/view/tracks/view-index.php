@@ -6,39 +6,33 @@
             <th>Track's name</th>
             <th>Duration</th>
             <th>Kilometers</th>
-
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
         <?php
         $html = "";
-//        foreach ($users as $user) {
-//
-//
-//            if ($user['idRole'] != 3) {
-//
-               $actions = '
-
-            <a href="/santourweb/tracks/edit" class="waves-effect waves-light btn resa-btn">
-                <i class="large material-icons">edit</i>
-            </a>
-                  <a href="/santourweb/categories/delete" class="waves-effect waves-light btn resa-btn">
-                <i class="large material-icons">delete</i>
-            </a> 
-            
-            ' ;
-
-                $html .= '<tr>
-              
-              <td>Track 1 </td>
-                <td>22:43</td>
-                <td>12km</td>
-                <td>' . $actions . '</td>
-              
-            
-            </tr>';
-//            }
-//        }
+        foreach ($tracks as $track) {
+            $actions = '
+                <a href="'.ABSURL.'/tracks/details?id='.$track->getId().'" class="waves-effect waves-light btn resa-btn">
+                    <i class="large material-icons">info_outline</i>
+                </a>
+                <a href="'.ABSURL.'/tracks/edit?id='.$track->getId().'" class="waves-effect waves-light btn resa-btn">
+                    <i class="large material-icons">edit</i>
+                </a>
+                <a href="'.ABSURL.'/categories/delete?id='.$track->getId().'" class="waves-effect waves-light btn resa-btn">
+                    <i class="large material-icons">delete</i>
+                </a> 
+            ';
+            $html .= '
+                <tr>
+                    <td>'.$track->getName().'</td>
+                    <td>'.$track->getTimer().'</td>
+                    <td>'.$track->getLength().'</td>
+                    <td>'.$actions.'</td>
+                </tr>
+            ';
+        }
 
         echo $html;
         ?>

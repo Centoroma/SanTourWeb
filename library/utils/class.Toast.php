@@ -1,6 +1,6 @@
 <?php
 
-namespace ResaBike\Library\Utils;
+namespace SanTourWeb\Library\Utils;
 
 class Toast
 {

@@ -120,7 +120,7 @@ $(document).ready(function () {
     $('[id^="btn-acceptBook-"]').click(function () {
         var id = this.id.replace(/^\D+/g, '');
         $.ajax({
-            url: '/resabike/books/acceptBook',
+            url: '/SanTourWeb/books/acceptBook',
             data: {
                 'id': id,
                 'accepted': $(this).data('accepted')
@@ -137,7 +137,7 @@ $(document).ready(function () {
     $('[id^="btn-denyBook-"]').click(function () {
         var id = this.id.replace(/^\D+/g, '');
         $.ajax({
-            url: '/resabike/books/denyBook',
+            url: '/SanTourWeb/books/denyBook',
             data: {
                 'id': id,
                 'accepted': $(this).data('accepted')
@@ -162,7 +162,7 @@ function enableSearchButton() {
 
 function autocompletionFromDB(input, stations) {
     $.ajax({
-        url: '/resabike/index/getStations',
+        url: '/SanTourWeb/index/getStations',
         data: {
             'input': input
         },
@@ -271,7 +271,7 @@ function fillHoursTab(trips) {
         $('[id^="btn-book-"]').click(function () {
             var id = this.id.substring(this.id.length - 1, this.id.length);
             formHtml = '' +
-                '<form id="form-book" method="post" action="/resabike/index/booking">' +
+                '<form id="form-book" method="post" action="/SanTourWeb/index/booking">' +
                 '<input type="text" name="from" value="' + trips[id].from + '">' +
                 '<input type="text" name="to" value="' + trips[id].to + '">' +
                 '<input type="text" name="departure" value="' + trips[id].departure + '">' +
@@ -288,7 +288,7 @@ function fillHoursTab(trips) {
 
 function getNbBikes(trips, i) {
     $.ajax({
-        url: '/resabike/index/getNbBikes',
+        url: '/SanTourWeb/index/getNbBikes',
         data: {
             'lines': trips[i].lines.join(';'),
             'departure': trips[i].departure,
@@ -381,7 +381,7 @@ function getLinesFromApi(inputStart, inputEnd, stations) {
                                             //Clic sur le bouton d'ajout
                                             $('[id^="btn-addLine-"]').click(function () {
                                                 $.ajax({
-                                                    url: '/resabike/lines/addLine',
+                                                    url: '/SanTourWeb/lines/addLine',
                                                     data: {
                                                         'id': $(this).data('id'),
                                                         'startStation': $(this).data('start'),

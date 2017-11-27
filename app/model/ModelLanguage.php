@@ -6,9 +6,9 @@
  * Time: 14:52
  */
 
-namespace ResaBike\App\Model;
+namespace SanTourWeb\App\Model;
 
-use ResaBike\Library\Mvc\Model;
+use SanTourWeb\Library\Mvc\Model;
 
 class ModelLanguage extends Model
 {

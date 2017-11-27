@@ -1,6 +1,6 @@
 <div class="container">
     <h1>All categories</h1></td>
-    <a class="btn waves-effect waves-light resa-btn" href="/santourweb/categories/add">Add a new categorie</a>
+    <a class="btn waves-effect waves-light resa-btn" href="<?php echo ABSURL;?>/categories/add">Add a new categorie</a>
     <table class="bordered">
         <thead>
         <tr>
@@ -20,10 +20,10 @@
         //
         $actions = '
 
-            <a href="/santourweb/categories/edit" class="waves-effect waves-light btn resa-btn">
+            <a href="'.ABSURL.'/categories/edit" class="waves-effect waves-light btn resa-btn">
                 <i class="large material-icons">edit</i>
             </a>
-            <a href="/santourweb/categories/delete" class="waves-effect waves-light btn resa-btn">
+            <a href="'.ABSURL.'/categories/delete" class="waves-effect waves-light btn resa-btn">
                 <i class="large material-icons">delete</i>
             </a> 
             

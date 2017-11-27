@@ -1,5 +1,5 @@
 <?php
-namespace ResaBike\Library\Mvc;
+namespace SanTourWeb\Library\Mvc;
 
 class View {
 
