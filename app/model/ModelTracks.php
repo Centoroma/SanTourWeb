@@ -48,12 +48,12 @@ class ModelTracks extends Model
 
         //$track = new Track($id, $trackDB->idType, $trackDB->idUser, $trackDB->name, $trackDB->description, $trackDB->distance, $trackDB->duration, $pods, $pois, $positions);
         $track = new Track($id, $trackDB->name, $trackDB->length, $trackDB->timer/*, $trackDB->pods*/);
-        echo 'Track :<br />';
-        echo 'Id : ' . $track->getId() . '<br />';
-        echo 'name : ' . $track->getName() . '<br />';
-        echo 'length : ' . $track->getLength() . '<br />';
-        echo 'timer : ' . $track->getTimer() . '<br />';
-        echo '<br />';
+     //   echo 'Track :<br />';
+      //  echo 'Id : ' . $track->getId() . '<br />';
+       // echo 'name : ' . $track->getName() . '<br />';
+        //echo 'length : ' . $track->getLength() . '<br />';
+        //echo 'timer : ' . $track->getTimer() . '<br />';
+        //echo '<br />';
 //        $i = 1;
 //        foreach ($pods as $pod) {
 //            echo 'POD ' . $i . ' : <br />';

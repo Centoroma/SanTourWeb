@@ -20,7 +20,9 @@
     <div class="navbar-fixed">
         <nav class="teal lighten-2">
             <div class="nav-wrapper container">
-                <span class="brand-logo">SanTour</span>
+                <span class="brand-logo">
+                    <img src="/SanTourWeb/assets/images/logoBlanc.png" width="50px" height="45px" style="margin-top: 2%">
+                    SanTour</span>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <?php
@@ -36,13 +38,14 @@
                     if ($act == 'index') {
                         echo '';
                     }
-                    echo '><a href="'.ABSURL.'/categories">categories</a></li>';
+                    echo '><a href="'.ABSURL.'/categories">Categories</a></li>';
 
                     echo '<li ';
                     if ($act == 'index') {
                         echo '';
                     }
-                    echo '><a href="">About</a></li>';
+
+
 
 
 
@@ -90,18 +93,9 @@
                     ?>
                 </ul>
             </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">Navigation</h5>
-                <ul>
-                    <?php
-                    $act = $this->currentAction;
+            <div class="col l3 s12" style="margin-top: 8%">
+                Copyright ©2017 SanTour
 
-                    if ($act == 'index')
-                        echo '<li class="resa-disabled">About</li>';
-                    else
-                        echo '<li><a class="white-text" href=""</a></li>';
-                    ?>
-                </ul>
             </div>
         </div>
     </div>

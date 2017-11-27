@@ -22,8 +22,12 @@ class ControllerTracks extends Controller
         else {
             $track = $this->model->getTrackById($_GET['id']);
             $this->view->Set('track', $track);
+            var_dump($track);
+
             return $this->view->Render();
+
         }
+
     }
 
     public function delete()
@@ -41,15 +45,16 @@ class ControllerTracks extends Controller
 
     public function edit()
     {
-        if (isset($_POST['submit'])) {
+        if(!isset($_GET['id']) || empty($_GET['id']))
+            Redirect::toLastPage();
+        else {
+            $track = $this->model->getTrackById($_GET['id']);
+            $this->view->Set('track', $track);
+            var_dump($track);
 
-            //$this->model->addUser($_POST['idRole'], null, $_POST['pseudo'], "pass", $_POST['email']);
+            return $this->view->Render();
 
-            //$this->model->addUser($_POST['idRole'], $_POST['idZone'], $_POST['pseudo'], "pass", $_POST['email']);
-            Redirect::toAction('tracks');
         }
-
-        return $this->view->Render();
     }
 
 }
