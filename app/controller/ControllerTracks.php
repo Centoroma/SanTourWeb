@@ -23,7 +23,7 @@ class ControllerTracks extends Controller
             $track = $this->model->getTrackById($_GET['id']);
             $this->view->Set('track', $track);
             var_dump($track);
-
+            
             return $this->view->Render();
 
         }
@@ -32,15 +32,11 @@ class ControllerTracks extends Controller
 
     public function delete()
     {
-        redirectIfNotConnected();
-        redirectByRole(ROLE_SYS_ADMIN, $this);
+        $this->model->deleteTrack($_GET['id']);
 
-        if (isset($_GET['id']) && !empty($_GET['id'])) {
-            $this->model->deleteZone($_GET['id']);
-            Toast::message(__('Zone deleted', true), 'green');
-            Redirect::toAction('Zones');
-        } else
-            Toast::message(__('Suppression failed', true), 'red');
+        Redirect::toAction('tracks');
+
+
     }
 
     public function edit()
@@ -50,11 +46,36 @@ class ControllerTracks extends Controller
         else {
             $track = $this->model->getTrackById($_GET['id']);
             $this->view->Set('track', $track);
-            var_dump($track);
+
+
+            var_dump($_GET['id']);
+            if (isset($_POST['submitUpdate'])) {
+
+                $this->model->updateTrack($_GET['id']);
+
+                Redirect::toAction('tracks');
+
+
+
+            }
+
 
             return $this->view->Render();
 
         }
+    }
+
+    public function update()
+    {
+
+
+
+            $newName = $_GET['nameTrack'];
+            var_dump($newName+" dsadsdsad");
+        $this->model->updateTrack($_GET['id'],$_GET['name']);
+        Redirect::toAction('tracks');
+
+
     }
 
 }

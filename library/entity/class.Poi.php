@@ -2,7 +2,7 @@
 
 namespace SanTourWeb\Library\Entity;
 
-class Pod {
+class Poi {
 
     private $coordinate;
 

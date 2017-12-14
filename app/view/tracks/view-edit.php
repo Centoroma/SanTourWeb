@@ -19,7 +19,7 @@
                     <label>Kilometers</label>
                 </div>
             </div>
-            <button class="btn waves-effect waves-light resa-btn" name="submit" type="submit">Confirme</button>
+            <button class="btn waves-effect waves-light resa-btn" name="submitUpdate" type="submit">Confirme</button>
             <a href="<?php echo ABSURL;?>/tracks" class="btn waves-effect waves-light resa-btn">Cancel</a>
         </form>
     </div>

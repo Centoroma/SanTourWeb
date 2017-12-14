@@ -20,7 +20,7 @@
                 <a href="'.ABSURL.'/tracks/edit?id='.$track->getId().'" class="waves-effect waves-light btn resa-btn">
                     <i class="large material-icons">edit</i>
                 </a>
-                <a href="'.ABSURL.'/categories/delete?id='.$track->getId().'" class="waves-effect waves-light btn resa-btn">
+                <a href="'.ABSURL.'/tracks/delete?id='.$track->getId().'" class="waves-effect waves-light btn resa-btn">
                     <i class="large material-icons">delete</i>
                 </a> 
             ';

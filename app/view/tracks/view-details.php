@@ -42,10 +42,10 @@
             <table class="bordered">
                 <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>Coordinate</th>
                     <th>Description</th>
-                    <th>Image</th>
-                    <th>Coordintates</th>
+                    <th>Name</th>
+                    <th>Picture</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -73,11 +73,10 @@
             <table class="bordered">
                 <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>Coordinate</th>
                     <th>Description</th>
-                    <th>Image</th>
-                    <th>Coordintates</th>
-                    <th>Difficulty</th>
+                    <th>Name</th>
+                    <th>Picture</th>
                 </tr>
                 </thead>
                 <tbody>

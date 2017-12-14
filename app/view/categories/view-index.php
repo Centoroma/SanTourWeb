@@ -1,46 +1,41 @@
 <div class="container">
     <h1>All categories</h1></td>
-    <a class="btn waves-effect waves-light resa-btn" href="<?php echo ABSURL;?>/categories/add">Add a new categorie</a>
+    <a class="btn waves-effect waves-light resa-btn" href="<?php echo ABSURL; ?>/categories/add">Add a new categorie</a>
     <table class="bordered">
         <thead>
         <tr>
             <th>Name</th>
-            <th>Type</th>
-            <th>Degree</th>
 
         </tr>
         </thead>
         <tbody>
         <?php
         $html = "";
-        //        foreach ($users as $user) {
-        //
-        //
-        //            if ($user['idRole'] != 3) {
-        //
-        $actions = '
+        if(!empty($categories)) {
 
-            <a href="'.ABSURL.'/categories/edit" class="waves-effect waves-light btn resa-btn">
+            foreach ($categories as $category) {
+
+                $actions = '
+
+            <a href="'.ABSURL.'/categories/edit?id='.$category->getId().'" class="waves-effect waves-light btn resa-btn">
                 <i class="large material-icons">edit</i>
             </a>
-            <a href="'.ABSURL.'/categories/delete" class="waves-effect waves-light btn resa-btn">
+            <a href="' . ABSURL . '/categories/delete?id=' . $category->getId() . '" class="waves-effect waves-light btn resa-btn">
                 <i class="large material-icons">delete</i>
             </a> 
             
-            ' ;
+            ';
 
-        $html .= '<tr>
+                $html .= '<tr>
               
-                <td>Rocks </td>
-                <td>graduation</td>
-                <td>12</td>
-                <td>' . $actions . '</td>
+               <td>' . $category->getName() . '</td>
+               <td>' . $actions . '</td>
               
             
             </tr>';
-        //            }
-        //        }
+            }
 
+        }
         echo $html;
         ?>
         </tbody>
