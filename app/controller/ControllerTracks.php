@@ -22,8 +22,10 @@ class ControllerTracks extends Controller
         else {
             $track = $this->model->getTrackById($_GET['id']);
             $this->view->Set('track', $track);
-            var_dump($track);
-            
+
+
+
+
             return $this->view->Render();
 
         }
@@ -48,7 +50,7 @@ class ControllerTracks extends Controller
             $this->view->Set('track', $track);
 
 
-            var_dump($_GET['id']);
+
             if (isset($_POST['submitUpdate'])) {
 
                 $this->model->updateTrack($_GET['id']);
@@ -70,8 +72,8 @@ class ControllerTracks extends Controller
 
 
 
-            $newName = $_GET['nameTrack'];
-            var_dump($newName+" dsadsdsad");
+        $newName = $_GET['nameTrack'];
+
         $this->model->updateTrack($_GET['id'],$_GET['name']);
         Redirect::toAction('tracks');
 

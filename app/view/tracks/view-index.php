@@ -12,28 +12,30 @@
         <tbody>
         <?php
         $html = "";
-        foreach ($tracks as $track) {
-            $actions = '
-                <a href="'.ABSURL.'/tracks/details?id='.$track->getId().'" class="waves-effect waves-light btn resa-btn">
+
+        if(!empty($tracks)) {
+            foreach ($tracks as $track) {
+                $actions = '
+                <a href="' . ABSURL . '/tracks/details?id=' . $track->getId() . '" class="waves-effect waves-light btn resa-btn">
                     <i class="large material-icons">info_outline</i>
                 </a>
-                <a href="'.ABSURL.'/tracks/edit?id='.$track->getId().'" class="waves-effect waves-light btn resa-btn">
+                <a href="' . ABSURL . '/tracks/edit?id=' . $track->getId() . '" class="waves-effect waves-light btn resa-btn">
                     <i class="large material-icons">edit</i>
                 </a>
-                <a href="'.ABSURL.'/tracks/delete?id='.$track->getId().'" class="waves-effect waves-light btn resa-btn">
+                <a href="' . ABSURL . '/tracks/delete?id=' . $track->getId() . '" class="waves-effect waves-light btn resa-btn">
                     <i class="large material-icons">delete</i>
                 </a> 
             ';
-            $html .= '
+                $html .= '
                 <tr>
-                    <td>'.$track->getName().'</td>
-                    <td>'.$track->getTimer().'</td>
-                    <td>'.$track->getLength().'</td>
-                    <td>'.$actions.'</td>
+                    <td>' . $track->getName() . '</td>
+                    <td>' . $track->getTimer() . '</td>
+                    <td>' . $track->getLength() . '</td>
+                    <td>' . $actions . '</td>
                 </tr>
             ';
+            }
         }
-
         echo $html;
         ?>
         </tbody>

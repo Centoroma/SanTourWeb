@@ -12,6 +12,8 @@ class Poi {
 
     private $picture;
 
+
+
     //private $position;
     //private $podCategories;
 

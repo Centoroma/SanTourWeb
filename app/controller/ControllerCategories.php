@@ -27,13 +27,13 @@ class ControllerCategories extends Controller
             $category = $this->model->getCategoryById($_GET['id']);
             $this->view->Set('category', $category);
 
-            var_dump($_GET['id']);
+
             if (isset($_POST['submitUpdate'])) {
 
                 $this->model->updateCategory($_GET['id']);
 
                 Redirect::toAction('categories');
-                var_dump("salut bg");
+
 
             }
 

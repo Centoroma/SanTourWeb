@@ -72,24 +72,13 @@
                 </p>
             </div>
             <div class="col l3 s12">
-                <h5 class="white-text">Languages</h5>
+
                 <ul>
                     <?php
                     $ctr = $this->currentController;
                     $act = $this->currentAction;
 
-                    if ($_SESSION['lang'] == 'de')
-                        echo '<li class="resa-disabled">German</li>';
-                    else
-                        echo '<li><a class="white-text" href="'.ABSURL.'/language?lang=de">German</a></li>';
-                    if ($_SESSION['lang'] == 'en')
-                        echo '<li class="resa-disabled">English</li>';
-                    else
-                        echo '<li><a class="white-text" href="'.ABSURL.'/language?lang=en">English</a></li>';
-                    if ($_SESSION['lang'] == 'fr')
-                        echo '<li class="resa-disabled">French</li>';
-                    else
-                        echo '<li><a class="white-text" href="'.ABSURL.'/language?lang=fr">French</a></li>';
+
                     ?>
                 </ul>
             </div>

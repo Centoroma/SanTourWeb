@@ -2,13 +2,16 @@
 
 namespace SanTourWeb\Library\Entity;
 
-class Track {
+class Track
+{
     private $id;
     private $name;
     private $length;
     private $timer;
-    private $pods;
+    private $coordinate;
 
+    private $pois;
+    private $pods;
     /**
      * Track constructor.
      * @param $id
@@ -17,14 +20,18 @@ class Track {
      * @param $timer
      * @param $pods
      */
-    public function __construct($id, $name, $length, $timer/*, $pods*/)
+    public function __construct($id, $name, $length, $timer, $coordinate)
     {
         $this->id = $id;
         $this->name = $name;
         $this->length = $length;
         $this->timer = $timer;
-     // $this->pods = $pods;
+        $this->coordinate = $coordinate;
+
+
     }
+
+
 
     /**
      * @return mixed
@@ -33,6 +40,7 @@ class Track {
     {
         return $this->id;
     }
+
 
     /**
      * @return mixed
@@ -85,6 +93,22 @@ class Track {
     /**
      * @return mixed
      */
+    public function getPois()
+    {
+            return $this->pois;
+    }
+
+    /**
+     * @param mixed $pois
+     */
+    public function setPois($pois)
+    {
+        $this->pois = $pois;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getPods()
     {
         return $this->pods;
@@ -97,4 +121,22 @@ class Track {
     {
         $this->pods = $pods;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCoordinate()
+    {
+        return $this->coordinate;
+    }
+
+    /**
+     * @param mixed $coordinate
+     */
+    public function setCoordinate($coordinate)
+    {
+        $this->coordinate = $coordinate;
+    }
+
+
 }
