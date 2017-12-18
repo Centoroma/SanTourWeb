@@ -71,6 +71,28 @@
             <script>
                 function initMap() {
 
+                    var podCoord = [
+
+                        <?php  foreach ($track->getPods() as $pod) {
+
+                        echo '{lat:' . $pod->getCoordinate()->getLatitude() . ', lng:' . $pod->getCoordinate()->getLongitude() . '},';
+                    }      ?>
+
+                    ];
+
+                    console.log(podCoord);
+
+                    var poiCoord = [
+
+                        <?php  foreach ($track->getPois() as $poi) {
+
+                        echo '{lat:' . $poi->getCoordinate()->getLatitude() . ', lng:' . $poi->getCoordinate()->getLongitude() . '},';
+                    }      ?>
+
+                    ];
+
+                    console.log(poiCoord);
+
 
                     var coordinates = [
                         <?php foreach ($track->getCoordinate() as $coord) {
@@ -79,10 +101,10 @@
 
                     ];
 
+
                     var mapFocus = coordinates[0];
 
                     var map = new google.maps.Map(document.getElementById('map'), {
-
 
                         zoom: 16,
                         center: mapFocus
@@ -91,26 +113,42 @@
 
                     console.log(coordinates);
 
+                    for (var i = 0; i < poiCoord.length; i++) {
+                        var mark = new google.maps.Marker({
+                            position: poiCoord[i],
+                            map: map
+
+                        });
+                    }
+
+                    for (var i = 0; i < podCoord.length; i++) {
+                        var mark = new google.maps.Marker({
+                            position: podCoord[i],
+                            map: map
+
+                        });
+                    }
+
 
                     var markerDebut = new google.maps.Marker({
                         position: coordinates[0],
-
                         map: map
+
                     });
 
                     var markerFin = new google.maps.Marker({
                         position: coordinates[coordinates.length - 1],
-                        
                         map: map
+
                     });
 
 
                     var flightPath = new google.maps.Polyline({
                         path: coordinates,
                         geodesic: true,
-                        strokeColor: '#FF0000',
-                        strokeOpacity: 1.0,
-                        strokeWeight: 2
+                        strokeColor: '#4245f4',
+                        strokeOpacity: 10.0,
+                        strokeWeight: 8
                     });
 
                     flightPath.setMap(map);
