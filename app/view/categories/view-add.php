@@ -4,7 +4,7 @@
         <form class="col s12" method="post">
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="name" type="text" class="validate" name="name">
+                    <input id="name" type="text" class="validate" name="name" required>
                     <label>POD category</label>
                 </div>
             </div>

@@ -4,7 +4,7 @@
         <form class="col s12" method="post">
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="nameTrack" type="text" class="validate" name="nameTrack" value="<?php echo $track->getName(); ?>">
+                    <input id="nameTrack" type="text" class="validate" required name="nameTrack" value="<?php echo $track->getName(); ?>">
                     <label for="last_name">track's Name</label>
                 </div>
             </div>

@@ -4,7 +4,7 @@
             <form class="col s12" method="post">
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="name" type="text" class="validate" name="name" value="<?php echo $category->getName(); ?>">
+                        <input id="name" type="text" class="validate" name="name" required value="<?php echo $category->getName(); ?> ">
                         <label>POD category</label>
                     </div>
                 </div>
