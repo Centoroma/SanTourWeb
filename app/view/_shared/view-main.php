@@ -6,8 +6,10 @@
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="<?php echo ABSURL;?>/assets/css/materialize.css" rel="stylesheet" media="screen,projection"/>
+
     <link href="<?php echo ABSURL;?>/assets/css/styles.css" rel="stylesheet" media="screen,projection"/>
+    <link href="<?php echo ABSURL;?>/assets/css/materialize.css" rel="stylesheet" media="screen,projection"/>
+
 
     <!--  Scripts-->
     <script src="<?php echo ABSURL;?>/assets/js/jquery-3.2.1.min.js"></script>
@@ -55,7 +57,7 @@
 <main>
     <?php echo $html; ?>
 </main>
-<footer class="page-footer navbar-color">
+<footer class="navbar-color">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
@@ -77,7 +79,7 @@
                     ?>
                 </ul>
             </div>
-            <div class="col l3 s12" style="margin-top: 8%">
+            <div class="col l3 s12" style="margin-top: 8%;color: #FFFFFF;">
                 Copyright ©2017 SanTour
 
             </div>
