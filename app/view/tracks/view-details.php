@@ -30,29 +30,8 @@
     </div>
 
     <div class="row">
-        <div class="col m2">
 
-            <h5>Coordonnées : </h5>
-
-            <?php
-            $html = "";
-            '<ul>';
-            foreach ($track->getCoordinate() as $coord) {
-
-                $html .= '
-                
-                                   <li style="list-style-type: none"><i class="material-icons">location_on</i>' . $coord->getLongitude() . ' / ' . $coord->getLatitude() . '</li>
-               
-                            ';
-            }
-
-            echo $html;
-            '</ul>';
-            ?>
-
-        </div>
-
-        <div class="col m10">
+        <div class="col m12">
             <!DOCTYPE html>
 
 
@@ -106,17 +85,29 @@
 
                     var map = new google.maps.Map(document.getElementById('map'), {
 
-                        zoom: 16,
+                        zoom: 13,
                         center: mapFocus
                     });
 
 
                     console.log(coordinates);
 
+                    function pinSymbol(color) {
+                        return {
+                            path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0',
+                            fillColor: color,
+                            fillOpacity: 1,
+                            strokeColor: '#000',
+                            strokeWeight: 1,
+                            scale: 0.8
+                        };
+                    }
+
                     for (var i = 0; i < poiCoord.length; i++) {
                         var mark = new google.maps.Marker({
                             position: poiCoord[i],
-                            map: map
+                            map: map,
+                            icon: pinSymbol("#ffff00")
 
                         });
                     }
@@ -124,7 +115,8 @@
                     for (var i = 0; i < podCoord.length; i++) {
                         var mark = new google.maps.Marker({
                             position: podCoord[i],
-                            map: map
+                            map: map,
+                            icon: pinSymbol("#ff0000")
 
                         });
                     }
@@ -132,13 +124,15 @@
 
                     var markerDebut = new google.maps.Marker({
                         position: coordinates[0],
-                        map: map
+                        map: map,
+                        icon: pinSymbol("#66ff33")
 
                     });
 
                     var markerFin = new google.maps.Marker({
                         position: coordinates[coordinates.length - 1],
-                        map: map
+                        map: map,
+                        icon: pinSymbol("#808080")
 
                     });
 
@@ -148,7 +142,7 @@
                         geodesic: true,
                         strokeColor: '#4245f4',
                         strokeOpacity: 10.0,
-                        strokeWeight: 8
+                        strokeWeight: 4
                     });
 
                     flightPath.setMap(map);
