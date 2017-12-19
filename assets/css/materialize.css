@@ -3363,6 +3363,7 @@ nav ul a span.badge {
   -webkit-font-feature-settings: 'liga';
      -moz-font-feature-settings: 'liga';
           font-feature-settings: 'liga';
+
 }
 
 .container {
@@ -6464,6 +6465,7 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
   font-size: 2rem;
   -webkit-transition: .3s color;
   transition: .3s color;
+
 }
 
 /* Textarea */

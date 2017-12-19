@@ -1,6 +1,6 @@
 <div class="container">
-    <h1>All tracks</h1></td>
-    <table class="bordered highlight centered tab-margin">
+    <h2>All tracks</h2>
+    <table class="bordered highlight centered">
         <thead>
         <tr>
             <th>NAME</th>
@@ -17,13 +17,21 @@
 
         if(!empty($tracks)) {
             foreach ($tracks as $track) {
-                $actions = '
+                $actionInfo = '
                 <a href="' . ABSURL . '/tracks/details?id=' . $track->getId() . '" class="waves-effect waves-light btn resa-btn">
                     <i class="large material-icons">info_outline</i>
                 </a>
+             
+            ';
+                $actionModify = '
+               
                 <a href="' . ABSURL . '/tracks/edit?id=' . $track->getId() . '" class="waves-effect waves-light btn resa-btn">
                     <i class="large material-icons">edit</i>
                 </a>
+              
+            ';
+                $actionDelete = '
+                
                 <a href="' . ABSURL . '/tracks/delete?id=' . $track->getId() . '" class="waves-effect waves-light btn resa-btn">
                     <i class="large material-icons">delete</i>
                 </a> 
@@ -33,7 +41,10 @@
                     <td>' . $track->getName() . '</td>
                     <td>' . $track->getTimer() . '</td>
                     <td>' . $track->getLength() . '</td>
-                    <td>' . $actions . '</td>
+                    <td>' . $actionInfo . '</td>
+                    <td>' . $actionModify . '</td>
+                    <td>' . $actionDelete . '</td>
+                    
                 </tr>
             ';
             }

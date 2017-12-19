@@ -1,4 +1,5 @@
 <div class="container">
+    <h2>Modify track</h2>
     <div class="row">
         <form class="col s12" method="post">
             <div class="row">
@@ -19,8 +20,14 @@
                     <label>Kilometers</label>
                 </div>
             </div>
-            <button class="btn waves-effect waves-light resa-btn" name="submitUpdate" type="submit">Confirme</button>
-            <a href="<?php echo ABSURL;?>/tracks" class="btn waves-effect waves-light resa-btn">Cancel</a>
+            <div class="row">
+                <div class="col s12">
+                    <a href="<?php echo ABSURL;?>/tracks" class="btn waves-effect">CANCEL</a>
+                    <button class="btn waves-effect right" name="submitUpdate" type="submit">SAVE</button>
+                </div>
+            </div>
+
+
         </form>
     </div>
 </div>

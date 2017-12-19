@@ -1,28 +1,25 @@
 <div class="container">
     <div class="resa-title">
-        <h3>Details about the track <i> <?php echo '"' . $track->getName() . '"'; ?></i></h3>
+        <h2>Details about the track <i> <?php echo '"' . $track->getName() . '"'; ?></i></h2>
     </div>
     <br/>
     <br/>
 
     <div class="row">
-        <div class="col m12 resa-bold-span">
-            <div class="row">
-                <div class="col s12 m6 l3">
-                    <span>Name :</span>
+        <div class="col s12 resa-bold-span">
+            <div class="row icon-align">
+                <div class="col s4 ">
+                    <i class="material-icons small">explore</i>
                     <?php echo $track->getName(); ?>
                 </div>
 
-            </div>
-            <div class="row">
-                <div class="col s12 m6 l3">
-                    <span>Duration : </span>
+                <div class="col s4">
+                    <i class="material-icons small">alarm</i>
                     <?php echo $track->getTimer(); ?>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col s12 m6 l3">
-                    <span>Length :</span>
+
+                <div class="col s4 ">
+                    <i class="material-icons small">directions_walk</i>
                     <?php echo $track->getLength(); ?>
                 </div>
             </div>
@@ -168,13 +165,13 @@
             </div>
 
 
-            <table class="bordered">
+            <table class="bordered highlight">
                 <thead>
                 <tr>
-                    <th>Coordinates</th>
-                    <th>Description</th>
-                    <th>Name</th>
-                    <th>Picture</th>
+                    <th>GPS</th>
+                    <th>DESCRIPTION</th>
+                    <th>NAME</th>
+                    <th>PHOTO</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -210,13 +207,13 @@
                 <h4>POD List</h4>
             </div>
 
-            <table class="bordered">
+            <table class="bordered highlight ">
                 <thead>
                 <tr>
-                    <th>Coordinate</th>
-                    <th>Description</th>
-                    <th>Name</th>
-                    <th>Picture</th>
+                    <th>GPS</th>
+                    <th>DESCRIPTION</th>
+                    <th>NAME</th>
+                    <th>PHOTO</th>
                 </tr>
                 </thead>
                 <tbody>
