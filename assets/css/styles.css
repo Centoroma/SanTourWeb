@@ -168,3 +168,16 @@ h5 {
 .resa-side-nav .nav-active a {
     color: white;
 }
+
+.navbar-color{
+    background: #2E7D32;
+}
+
+
+h2{
+    padding-bottom: 0.5em;
+}
+
+.tab-margin{
+    margin-top: 8em;
+}

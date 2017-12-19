@@ -5201,13 +5201,13 @@ small {
 
 .btn:focus, .btn-large:focus,
 .btn-floating:focus {
-  background-color: #1d7d74;
+  background-color: #66BB6A;
 }
 
 .btn, .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #26a69a;
+  background-color: #66BB6A;
   text-align: center;
   letter-spacing: .5px;
   -webkit-transition: .2s ease-out;
@@ -5216,7 +5216,7 @@ small {
 }
 
 .btn:hover, .btn-large:hover {
-  background-color: #2bbbad;
+  background-color: #66BB6A;
 }
 
 .btn-floating {
@@ -5229,7 +5229,7 @@ small {
   height: 40px;
   line-height: 40px;
   padding: 0;
-  background-color: #26a69a;
+  background-color: #66BB6A;
   border-radius: 50%;
   -webkit-transition: .3s;
   transition: .3s;
@@ -5238,7 +5238,7 @@ small {
 }
 
 .btn-floating:hover {
-  background-color: #26a69a;
+  background-color: #66BB6A;
 }
 
 .btn-floating:before {
@@ -5390,7 +5390,7 @@ button.btn-floating {
   z-index: -1;
   width: 40px;
   height: 40px;
-  background-color: #26a69a;
+  background-color: #66BB6A;
   border-radius: 50%;
   -webkit-transform: scale(0);
           transform: scale(0);
@@ -7415,11 +7415,11 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .side-nav li > a.btn:hover, .side-nav li > a.btn-large:hover, .side-nav li > a.btn-large:hover {
-  background-color: #2bbbad;
+  background-color: #66BB6A;
 }
 
 .side-nav li > a.btn-floating:hover {
-  background-color: #26a69a;
+  background-color: #66BB6A;
 }
 
 .side-nav li > a > i,

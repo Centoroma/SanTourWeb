@@ -18,7 +18,7 @@
 <body>
 <header>
     <div class="navbar-fixed">
-        <nav class="teal lighten-2">
+        <nav class="navbar-color">
             <div class="nav-wrapper container">
                 <span class="brand-logo">
                     <img src="/SanTourWeb/assets/images/logoBlanc.png" width="50px" height="45px" style="margin-top: 2%">
@@ -45,11 +45,6 @@
                         echo '';
                     }
 
-
-
-
-
-
                     echo '<li ';
                     ?>
                 </ul>
@@ -60,7 +55,7 @@
 <main>
     <?php echo $html; ?>
 </main>
-<footer class="page-footer teal lighten-6">
+<footer class="page-footer navbar-color">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">

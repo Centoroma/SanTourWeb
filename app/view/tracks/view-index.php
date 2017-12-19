@@ -1,12 +1,14 @@
 <div class="container">
     <h1>All tracks</h1></td>
-    <table class="bordered">
+    <table class="bordered highlight centered tab-margin">
         <thead>
         <tr>
-            <th>Track's name</th>
-            <th>Duration</th>
-            <th>Kilometers</th>
-            <th>Actions</th>
+            <th>NAME</th>
+            <th>DURATION</th>
+            <th>KILOMETERS</th>
+            <th>INFORMATIONS</th>
+            <th>MODIFY</th>
+            <th>DELETE</th>
         </tr>
         </thead>
         <tbody>

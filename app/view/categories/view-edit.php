@@ -1,14 +1,20 @@
 <div class="container">
-    <div class="row">
-        <form class="col s12" method="post">
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="name" type="text" class="validate" name="name" value="<?php echo $category->getName(); ?>">
-                    <label>POD category</label>
+    <h2>Modify category</h2>
+        <div class="row">
+            <form class="col s12" method="post">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="name" type="text" class="validate" name="name" value="<?php echo $category->getName(); ?>">
+                        <label>POD category</label>
+                    </div>
                 </div>
-            </div>
-            <button class="btn waves-effect waves-light resa-btn" name="submitUpdate" type="submit">Confirme</button>
-            <a href="<?php echo ABSURL;?>/categories" class="btn waves-effect waves-light resa-btn">Cancel</a>
-        </form>
-    </div>
+                <div class="row">
+                    <div class="col s6">
+                        <a href="<?php echo ABSURL;?>/categories" class="btn waves-effect">CANCEL</a>
+                        <button class="btn waves-effect right" name="submitUpdate" type="submit">SAVE</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
 </div>
