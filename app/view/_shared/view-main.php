@@ -14,7 +14,6 @@
     <!--  Scripts-->
     <script src="<?php echo ABSURL;?>/assets/js/jquery-3.2.1.min.js"></script>
     <script src="<?php echo ABSURL;?>/assets/js/materialize.js"></script>
-    <script type="text/javascript" src="<?php echo ABSURL;?>/library/php/traduction.php"></script>
     <script src="<?php echo ABSURL;?>/assets/js/santourjs.js"></script>
 </head>
 <body>

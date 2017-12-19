@@ -1,4 +1,5 @@
 <?php
+
 //Define constant
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', realpath('..'.DS.'..'.DS));
