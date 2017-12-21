@@ -12,9 +12,14 @@ class ControllerCategories extends Controller
 
     public function index()
     {
+        if (isset($_SESSION['connected'])){
         $categories = $this->model->getCategories();
         $this->view->Set('categories', $categories);
         return $this->view->Render();
+        }
+        else{
+            Redirect::toAction('index');
+        }
 
     }
 

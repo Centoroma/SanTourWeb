@@ -25,8 +25,8 @@ function __($key, $return = false)
     $path = ASSETSPATH . DS . 'languages' . DS . $currentlang . '.json';
 
     // Récupération du contenu du fichier
-    $a = file_get_contents($path);
-    $lang = json_decode($a, true);
+   // $a = file_get_contents($path);
+    //$lang = json_decode($a, true);
 
     // Si le fichier n'existe pas ou que le mot clé n'est pas encore traduit
     if (empty($lang) || !array_key_exists($key, $lang)) {

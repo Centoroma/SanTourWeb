@@ -7,14 +7,14 @@
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link href="<?php echo ABSURL;?>/assets/css/styles.css" rel="stylesheet" media="screen,projection"/>
-    <link href="<?php echo ABSURL;?>/assets/css/materialize.css" rel="stylesheet" media="screen,projection"/>
+    <link href="<?php echo ABSURL; ?>/assets/css/styles.css" rel="stylesheet" media="screen,projection"/>
+    <link href="<?php echo ABSURL; ?>/assets/css/materialize.css" rel="stylesheet" media="screen,projection"/>
 
 
     <!--  Scripts-->
-    <script src="<?php echo ABSURL;?>/assets/js/jquery-3.2.1.min.js"></script>
-    <script src="<?php echo ABSURL;?>/assets/js/materialize.js"></script>
-    <script src="<?php echo ABSURL;?>/assets/js/santourjs.js"></script>
+    <script src="<?php echo ABSURL; ?>/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="<?php echo ABSURL; ?>/assets/js/materialize.js"></script>
+    <script src="<?php echo ABSURL; ?>/assets/js/santourjs.js"></script>
 </head>
 <body>
 <header>
@@ -22,7 +22,8 @@
         <nav class="navbar-color">
             <div class="nav-wrapper container">
                 <span class="brand-logo">
-                    <img src="/SanTourWeb/assets/images/logoBlanc.png" width="50px" height="45px" style="margin-top: 2%">
+                    <img src="/SanTourWeb/assets/images/logoBlanc.png" width="50px" height="45px"
+                         style="margin-top: 2%">
                     SanTour</span>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
@@ -33,20 +34,28 @@
                     if ($act == 'index') {
                         echo '';
                     }
-                    echo '><a href="'.ABSURL.'/tracks">Tracks</a></li>';
+                    echo '><a href="' . ABSURL . '/tracks">Tracks</a></li>';
 
                     echo '<li ';
                     if ($act == 'index') {
                         echo '';
                     }
-                    echo '><a href="'.ABSURL.'/categories">Categories</a></li>';
+                    echo '><a href="' . ABSURL . '/categories">Categories</a></li>';
 
                     echo '<li ';
                     if ($act == 'index') {
                         echo '';
                     }
+                    echo '<li ';
 
                     echo '<li ';
+                    if ($act == 'index') {
+                        echo '';
+                    }
+                    if (isset($_SESSION['connected']))
+                        echo '><a href="/santourweb/index/logout">Logout</a></li>';
+
+
                     ?>
                 </ul>
             </div>
@@ -61,6 +70,8 @@
         <div class="row">
             <div class="col l6 s12">
                 <h5 class="white-text">Who are we ?</h5>
+
+
                 <p class="grey-text text-lighten-4">
                     We are five students of the HES-SO in Sierre.
                     As part of our project course, we were asked to propose a new platform

@@ -21,11 +21,6 @@ class ModelTracks extends Model
 
             foreach ($trackDB as $key => $track) {
 
-
-
-
-
-
                 array_push($tracks, new Track($key, $track->name, $track->length, $track->timer, null   ));
             }
 
@@ -105,7 +100,7 @@ class ModelTracks extends Model
         return $track;
     }
 
-
+/*
     public function extractData()
     {
 
@@ -146,4 +141,5 @@ class ModelTracks extends Model
         fclose($display);
 
     }
+*/
 }

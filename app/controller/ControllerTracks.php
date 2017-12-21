@@ -10,10 +10,16 @@ class ControllerTracks extends Controller
 {
     public function index()
     {
+        if (isset($_SESSION['connected'])){
         $tracks = $this->model->getTracks();
         $this->view->Set('tracks', $tracks);
         return $this->view->Render();
-    }
+        }
+        else{
+            Redirect::toAction('index');
+        }
+
+        }
 
     public function details()
     {
