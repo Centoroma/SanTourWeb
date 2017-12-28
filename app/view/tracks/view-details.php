@@ -178,21 +178,33 @@
 
                 <?php
                 $html = "";
-
+                $i = 0;
                 foreach ($track->getPois() as $poi) {
-
+                    var_dump($i);
+                    var_dump($track->getId());
 
                     $html .= '
                 <tr>
                     <td>' . $poi->getCoordinate()->getLongitude() . ' / ' . $poi->getCoordinate()->getLatitude() . '</td>
                     <td>' . $poi->getDescription() . '</td>
-                    <td>' . $poi->getName() . '</td>
-                    <td>picture</td>
-                   
+                    <td>' . $poi->getName() . '</td> 
+                    <td><img src="https://firebasestorage.googleapis.com/v0/b/santour-75cf5.appspot.com/o/images%2F'.$track->getId().'%2FPOI%2Fpicture'.$i.'.jpg?alt=media"></td>
+                              <!--https://firebasestorage.googleapis.com/v0/b/santour-75cf5.appspot.com/o/images%2F-L0yi3Z5sqLAfhhpHWXv%2FPOI%2Fpicture0.jpg?alt=media--> 
+                    
+            
                 </tr>
 
+
      ';
+
+
+                    $i++;
+
+
+
+
                 }
+
 
                 echo $html;
                 ?>
@@ -220,20 +232,24 @@
 
                 <?php
                 $html = "";
+                $d = 0;
+
 
                 foreach ($track->getPods() as $pod) {
 
-
+var_dump($d);
+var_dump($track->getId());
                     $html .= '
                 <tr>
                     <td>' . $pod->getCoordinate()->getLongitude() . ' / ' . $pod->getCoordinate()->getLatitude() . '</td>
                     <td>' . $pod->getDescription() . '</td>
                     <td>' . $pod->getName() . '</td>
-                    <td>picture</td>
-                   
+                <td><img src="https://firebasestorage.googleapis.com/v0/b/santour-75cf5.appspot.com/o/images%2F'.$track->getId().'%2FPOD%2Fpicture'.$d.'.jpg?alt=media"></td>
+                      <!--      https://firebasestorage.googleapis.com/v0/b/santour-75cf5.appspot.com/o/images%2F-L0yi3Z5sqLAfhhpHWXv%2FPOD%2Fpicture0.jpg?alt=media-->
                 </tr>
 
                 ';
+                    $d++;
                 }
 
                 echo $html;

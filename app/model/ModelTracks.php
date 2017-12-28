@@ -78,7 +78,7 @@ class ModelTracks extends Model
         if(!empty($trackDB->pods)) {
             foreach ($podDB as $pod) {
                 $coordinate = new Coordinate($pod->coordinate->altitude, $pod->coordinate->date, $pod->coordinate->gdop, $pod->coordinate->latitude, $pod->coordinate->longitude, $pod->coordinate->nbre_sat);
-                array_push($pods, new Pod($coordinate, $pod->description, $pod->name, $pod->picture));
+                array_push($pods, new Pod($coordinate, $pod->description, $pod->name, null));
             }
         }
 
@@ -86,7 +86,7 @@ class ModelTracks extends Model
         if(!empty($trackDB->pois)) {
             foreach ($poiDB as $poi) {
                 $coordinate = new Coordinate($poi->coordinate->altitude, $poi->coordinate->date, $poi->coordinate->gdop, $poi->coordinate->latitude, $poi->coordinate->longitude, $poi->coordinate->nbre_sat);
-                array_push($pois, new Poi($coordinate, $poi->description, $poi->name, $poi->picture));
+                array_push($pois, new Poi($coordinate, $poi->description, $poi->name, null));
             }
         }
 
