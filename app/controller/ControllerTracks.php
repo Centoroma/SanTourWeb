@@ -5,7 +5,7 @@ namespace SanTourWeb\App\Controller;
 use SanTourWeb\Library\Mvc\Controller;
 use SanTourWeb\Library\Utils\Toast;
 use SanTourWeb\Library\Utils\Redirect;
-
+use SanTourWeb\library\php\FirebaseLib;
 class ControllerTracks extends Controller
 {
     public function index()
@@ -84,6 +84,21 @@ class ControllerTracks extends Controller
         Redirect::toAction('tracks');
 
 
+    }
+
+    public function export(){
+
+
+        if (!isset($_GET['id']) || empty($_GET['id']))
+            Redirect::toLastPage();
+
+        $firebase = FirebaseLib::getInstance();
+        $trackJSON = $firebase->get('tracks/' . $_GET['id']);
+        $track = json_decode($trackJSON);
+
+        header('Content-disposition: attachment; filename="' . $track->name . '.json"');
+        header('Content-type: application/json');
+        echo $trackJSON;
     }
 
 }
