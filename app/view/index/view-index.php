@@ -17,14 +17,15 @@
                     <label class="active" for="password">Password</label>
                 </div>
             </div>
+
+            <button type="submit" name="submit" class="waves-effect waves-light btn btn-large resa-btn">
+                <!--<i class="material-icons right">send</i>-->
+                Connect
+            </button>
             <a href="<?php echo ABSURL; ?>/" class="waves-effect waves-light btn btn-large resa-btn">
                 <!--<i class="material-icons right">undo</i>-->
                 Back
             </a>
-            <button type="submit" name="submit" class="waves-effect waves-light btn btn-large resa-btn">
-                <!--<i class="material-icons right">send</i>-->
-                Enter
-            </button>
 
         </form>
     </div>
