@@ -17,7 +17,6 @@ class ControllerIndex extends Controller
         $users = $this->model->getAllUsers();
         $this->view->Set('users', $users);
 
-        var_dump($users);
 
         //If the user is already connected, redirect to the books page
         if (isset($_SESSION['connected']) && $_SESSION['connected'] == true)

@@ -100,46 +100,5 @@ class ModelTracks extends Model
         return $track;
     }
 
-/*
-    public function extractData()
-    {
 
-        $firebase = FirebaseLib::getInstance();
-        $trackDB = json_decode($firebase->get('tracks'));
-
-        include_once('firebase.php');
-        $fo = fopen('file.csv', "r"); // CSV fiile
-        while (($emapData = fgetcsv($fo, "", ",")) !== FALSE) {
-            $sql = "INSERT into info (name,age,work,status) values ('$emapData[0]','$emapData[1]','$emapData[2]','$emapData[3]')";
-            mysql_query($sql);
-        }
-
-        // Connection
-        include_once('conn.php');
-
-        $sql = "select * from info";
-        $qur = mysql_query($sql);
-
-// Enable to download this file
-        $filename = "sampledata.csv";
-
-        header("Content-Disposition: attachment; filename=\"$filename\"");
-        header("Content-Type: text/csv");
-
-        $display = fopen("php://output", 'w');
-
-        $flag = false;
-        while ($row = mysql_fetch_assoc($qur)) {
-            if (!$flag) {
-                // display field/column names as first row
-                fputcsv($display, array_keys($row), ",", '"');
-                $flag = true;
-            }
-            fputcsv($display, array_values($row), ",", '"');
-        }
-
-        fclose($display);
-
-    }
-*/
 }
