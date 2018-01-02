@@ -188,8 +188,7 @@
                 $html = "";
                 $i = 0;
                 foreach ($track->getPois() as $poi) {
-                    var_dump($i);
-                    var_dump($track->getId());
+
 
                     $html .= '
                 <tr>
@@ -243,8 +242,7 @@
 
                 foreach ($track->getPods() as $pod) {
 
-                    var_dump($d);
-                    var_dump($track->getId());
+
                     $html .= '
                 <tr>
                     <td>' . $pod->getCoordinate()->getLongitude() . ' / ' . $pod->getCoordinate()->getLatitude() . '</td>
