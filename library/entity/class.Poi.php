@@ -5,17 +5,12 @@ namespace SanTourWeb\Library\Entity;
 class Poi {
 
     private $coordinate;
-
     private $description;
-
     private $name;
-
     private $picture;
 
 
 
-    //private $position;
-    //private $podCategories;
 
     /**
      * Pod constructor.

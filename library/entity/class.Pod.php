@@ -5,15 +5,9 @@ namespace SanTourWeb\Library\Entity;
 class Pod {
 
     private $coordinate;
-
     private $description;
-
     private $name;
-
     private $picture;
-
-    //private $position;
-    //private $podCategories;
 
     /**
      * Pod constructor.

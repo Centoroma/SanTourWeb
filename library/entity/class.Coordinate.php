@@ -13,14 +13,10 @@ class Coordinate
 {
 
     private $altitude;
-
     private $date;
-
     private $gdop;
-
     private $latitude;
     private $longitude;
-
     private $nbre_sat;
 
 

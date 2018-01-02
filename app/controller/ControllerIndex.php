@@ -53,11 +53,6 @@ class ControllerIndex extends Controller
         Redirect::toAction('index');
     }
 
-    public function home()
-    {
-        return $this->view->Render();
-    }
-
 
 
 

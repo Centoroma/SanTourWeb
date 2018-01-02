@@ -55,7 +55,6 @@ class ControllerCategories extends Controller
 
             //CategoryName
             $name = $_POST['name'];
-            var_dump($name);
             $this->model->addCategory($name);
 
             Redirect::toAction('categories');

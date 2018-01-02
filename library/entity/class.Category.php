@@ -6,11 +6,7 @@ class Category {
     private $id;
     private $name;
 
-    /**
-     * Category constructor.
-     * @param $id
-     * @param $name
-     */
+
     public function __construct($id, $name)
     {
         $this->id = $id;
