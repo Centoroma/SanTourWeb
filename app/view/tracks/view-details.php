@@ -23,7 +23,7 @@
 
                 <div class="col s4">
                     <i class="material-icons small">alarm</i>
-                    <?php echo $track->getTimer(); ?>
+                    <?php echo round(($track->getTimer()/1000)/60,2); ?>
                 </div>
 
                 <div class="col s4 ">
