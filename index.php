@@ -14,7 +14,8 @@ define('ASSETSPATH', realpath(ROOT.DS.'assets'));
 
 define('DEBUG_LEVEL', 2);
 
-define('ABSURL', 'http://localhost/SanTourWeb');
+define('ABSURL','http://vlhprj645-1.hevs.ch/grp19');
+//define('ABSURL', 'http://localhost/SanTourWeb');
 
 // LAISSE
 define('FIREBASE_URL', 'https://santour-75cf5.firebaseio.com/');

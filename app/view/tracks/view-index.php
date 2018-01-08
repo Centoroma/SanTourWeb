@@ -39,7 +39,7 @@
                 $html .= '
                 <tr>
                     <td>' . $track->getName() . '</td>
-                    <td>' . $track->getTimer() . '</td>
+                    <td>' . round(($track->getTimer()/1000)/60,2) . '</td>
                     <td>' . $track->getLength() . '</td>
                     <td>' . $actionInfo . '</td>
                     <td>' . $actionModify . '</td>
