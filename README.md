@@ -111,11 +111,19 @@ We have implemented only one activity in order to manage the recording of our tr
 
 ## Technical choices
 
-When we arrive on our application, you first need to start creating a track, this will enable the recording on firebase, we have also enable the offline registration.
+•	When we arrive on our application, you first need to start creating a track, this will enable the recording on firebase, we have also enable the offline registration.
 
-In order to be certain to record only one track at a time, we create a class CurrentRecordingTrack that have a track in static, with that we are certain to have only one track at a time.
+•	In order to be certain to record only one track at a time, we create a class CurrentRecordingTrack that have a track in static, with that we are certain to have only one track at a time.
 
-To store pictures inside our database we choose to use the storage of firebase. The path to the image is image/[Id_Track]/POD(POI)/picture[numbeer of the POD/POI in the track].jpg
+•	To be sure that we have only one connection to firebase, we keep this connection inside a static class
+
+•	To store pictures inside our database we choose to use the storage of firebase. The path to the image is image/[Id_Track]/POD(POI)/picture[number of the POD/POI in the track].jpg
+
+•	For the localisation, we use the default localisation tool of google which give us a localisation in latitude and longitude.
+
+•	For displaying the map, we use the google map API.
+
+•	The graphical part of the application has been made with relative layout.
 
 ## Authors
 
