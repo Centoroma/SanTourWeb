@@ -22,7 +22,7 @@
         <nav class="navbar-color">
             <div class="nav-wrapper container">
                 <span class="brand-logo">
-                    <img src="/SanTourWeb/assets/images/logoBlanc.png" width="50px" height="45px"
+                    <img src="<?php echo ABSURL; ?>/assets/images/logoBlanc.png" width="50px" height="45px"
                          style="margin-top: 2%">
                     SanTour</span>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -53,7 +53,7 @@
                         echo '';
                     }
                     if (isset($_SESSION['connected']))
-                        echo '><a href="/santourweb/index/logout">Logout</a></li>';
+                        echo '><a href="' . ABSURL . '/index/logout">Logout</a></li>';
 
 
                     ?>

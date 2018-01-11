@@ -43,7 +43,6 @@ class ControllerIndex extends Controller
             if ($error)
                 Toast::message('User or mdp incorrect', 'red');
         }
-        $this->view->SetLayout(APPPATH . DS . 'view' . DS . '_shared' . DS . 'view-main.php');
         return $this->view->Render();
     }
 

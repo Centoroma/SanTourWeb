@@ -6,8 +6,7 @@
             </div>
             <div class="col s4">
                 <!-- waves-effect waves-light btn resa-btn -->
-                <a href="<?php echo ABSURL; ?>/tracks/export?id=<?php echo $track->getId(); ?>"
-                   class="waves-effect waves-light btn resa-btn">export</a>
+                <h2 href="<?php echo ABSURL;?>/tracks/export?id=<?php echo $track->getId();?>" class="waves-effect waves-light btn resa-btn right">export</h2>
             </div>
         </div>
     </div>
