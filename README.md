@@ -6,26 +6,14 @@ You can find the web interface project here: https://github.com/Centoroma/SanTou
 
 ## Getting Started
 
-In order to run this project, you will need to upload this project on your android studio, 
-
-configure your firebase database and allow the modification of the database by everyone, 
-
-configure the firebase Storage and allow its modification for everyone
-
-and simply run the programm using your smartphone or an android emulator.
-
-### Prerequisites
-
-The prerequisites of this project are: 
-```
-Android Studio 3.0.1 or higher
-An android SDK 18 or higher (target build:  android SDK 26)
-GPS emulator (if you want to use the android emulator)
-```
+In order to run this project, you will need to upload this project on your android studio,
+•	You can download Xampp for be able to run Apache and MySQL servers : https://www.apachefriends.org/fr/download.html
+•	You can download PhpStorm here : https://www.jetbrains.com/phpstorm/download/#section=windows
+•	Then connect to the GitHub project : https://github.com/Centoroma/SanTourWeb
 
 ## Project Structure
 
-We build this project to follow a standard N-Tier architecture:
+We build this project to follow a standard MVC architecture:
 ```
 
 SanTourWeb/
@@ -90,40 +78,12 @@ SanTourWeb/
     └── function.php
 ```
 
-## Navigation
-
-The navigation of our project work like this:
-```
-MainActivity
-├── fragment_create_track
-│   ├── fragment_create_pod
-│   │   └── fragment_details_pod ─── details_row
-│   └── fragment_create_pod
-├── fragment_poi_pod_list ─── pod_row
-│   ├── fragment_update_pod
-│   │   └── fragment_update_details_pod ─── details_row
-│   └── fragment_update_poi
-├── fragment_about
-└── fragment_settings
-```
-
-We have implemented only one activity in order to manage the recording of our tracks even when the application is not active
-
 ## Technical choices
 
-•	When we arrive on our application, you first need to start creating a track, this will enable the recording on firebase, we have also enable the offline registration.
-
-•	In order to be certain to record only one track at a time, we create a class CurrentRecordingTrack that have a track in static, with that we are certain to have only one track at a time.
-
-•	To be sure that we have only one connection to firebase, we keep this connection inside a static class
-
-•	To store pictures inside our database we choose to use the storage of firebase. The path to the image is image/[Id_Track]/POD(POI)/picture[number of the POD/POI in the track].jpg
-
-•	For the localisation, we use the default localisation tool of google which give us a localisation in latitude and longitude.
-
+We made several technical choices for this project:
+•	For the database, we use Firebase like in the android project.
 •	For displaying the map, we use the google map API.
-
-•	The graphical part of the application has been made with relative layout.
+•	And for the design we implement materialize.
 
 ## Authors
 
