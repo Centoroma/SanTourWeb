@@ -20,9 +20,6 @@ class Coordinate
     private $nbre_sat;
 
 
-    //private $position;
-    //private $podCategories;
-
     /**
      * Pod constructor.
      * @param $name

@@ -9,9 +9,6 @@ class Poi {
     private $name;
     private $picture;
 
-
-
-
     /**
      * Pod constructor.
      * @param $name

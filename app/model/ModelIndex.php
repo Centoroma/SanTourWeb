@@ -12,7 +12,7 @@ use SanTourWeb\Library\Php\FirebaseLib;
 class ModelIndex extends Model
 {
 
-
+    //get all users
     public function getAllUsers()
     {
         $firebase = FirebaseLib::getInstance();
@@ -29,6 +29,7 @@ class ModelIndex extends Model
         }
     }
 
+    //get the password of a user by his name
     public function getPasswordByName($name)
     {
 
@@ -44,7 +45,7 @@ class ModelIndex extends Model
 
             foreach ($users as $key => $user) {
 
-                if($user->getName() == $name){
+                if ($user->getName() == $name) {
                     $userGoal = $user;
                 }
             }
@@ -53,15 +54,7 @@ class ModelIndex extends Model
             return $userGoal->getMdp();
         }
 
-
     }
 
-    public function getPasswordByPseudo($pseudo)
-    {
-        $users = $this->getAllUsers();
-        foreach ($users as $user) {
-            if ($user['pseudo'] == $pseudo)
-                return $user['password'];
-        }
-    }
+
 }

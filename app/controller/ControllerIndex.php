@@ -11,9 +11,9 @@ use SanTourWeb\Library\Php\FirebaseLib;
 class ControllerIndex extends Controller
 {
 
+    // login page
     public function index()
     {
-
         $users = $this->model->getAllUsers();
         $this->view->Set('users', $users);
 
@@ -23,9 +23,8 @@ class ControllerIndex extends Controller
             Redirect::toAction('tracks');
 
 
-
         if (isset($_POST['submit'])) {
-            //header("Location: /SanTourWeb/tracks");
+
             $error = false;
             $users = $this->model->getAllUsers();
             foreach ($users as $user) {
@@ -46,16 +45,11 @@ class ControllerIndex extends Controller
         return $this->view->Render();
     }
 
+    //logout
     public function logout()
     {
         session_destroy();
         Redirect::toAction('index');
     }
-
-
-
-
-
-
 
 }

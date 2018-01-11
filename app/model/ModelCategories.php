@@ -16,7 +16,7 @@ use SanTourWeb\Library\Php\FirebaseLib;
 class ModelCategories
 {
 
-
+    //get all categories
     public function getCategories()
     {
         $firebase = FirebaseLib::getInstance();
@@ -34,6 +34,7 @@ class ModelCategories
       }
     }
 
+    //update a category
     public function updateCategory($id){
 
         $firebase = FirebaseLib::getInstance();
@@ -45,7 +46,7 @@ class ModelCategories
 
     }
 
-
+    //add a category
     public function addCategory($name)
     {
         $firebase = FirebaseLib::getInstance();
@@ -55,7 +56,7 @@ class ModelCategories
         $firebase->push('difficulties', $category);
 
     }
-
+    //delete a category
     public function deleteCategory($id)
     {
         $firebase = FirebaseLib::getInstance();
@@ -64,7 +65,7 @@ class ModelCategories
 
     }
 
-
+    //get a category by his id
     public function getCategoryById($id)
     {
 

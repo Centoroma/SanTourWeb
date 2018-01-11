@@ -9,7 +9,6 @@ class Track
     private $length;
     private $timer;
     private $coordinate;
-
     private $pois;
     private $pods;
     /**
@@ -28,10 +27,7 @@ class Track
         $this->timer = $timer;
         $this->coordinate = $coordinate;
 
-
     }
-
-
 
     /**
      * @return mixed

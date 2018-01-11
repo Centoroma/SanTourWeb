@@ -9,6 +9,7 @@ use SanTourWeb\library\php\FirebaseLib;
 
 class ControllerTracks extends Controller
 {
+    //home page of the tracks
     public function index()
     {
         if (isset($_SESSION['connected'])) {
@@ -21,6 +22,7 @@ class ControllerTracks extends Controller
 
     }
 
+    //display details of the track
     public function details()
     {
 
@@ -43,6 +45,7 @@ class ControllerTracks extends Controller
 
     }
 
+    //delete a track
     public function delete()
     {
         $this->model->deleteTrack($_GET['id']);
@@ -52,6 +55,7 @@ class ControllerTracks extends Controller
 
     }
 
+    //open the page for edit a track
     public function edit()
     {
         if (!isset($_GET['id']) || empty($_GET['id']))
@@ -67,30 +71,25 @@ class ControllerTracks extends Controller
 
                 Redirect::toAction('tracks');
 
-
             }
-
 
             return $this->view->Render();
 
         }
     }
 
+    //make the update in the database
     public function update()
     {
-
-
-        $newName = $_GET['nameTrack'];
 
         $this->model->updateTrack($_GET['id'], $_GET['name']);
         Redirect::toAction('tracks');
 
-
     }
 
+    //export a track in json file
     public function export()
     {
-
 
         if (!isset($_GET['id']) || empty($_GET['id']))
             Redirect::toLastPage();

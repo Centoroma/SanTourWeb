@@ -14,6 +14,7 @@ use SanTourWeb\Library\Entity\Difficulty;
 
 class ModelTracks extends Model
 {
+    //get all tracks
     public function getTracks()
     {
         $firebase = FirebaseLib::getInstance();
@@ -31,6 +32,7 @@ class ModelTracks extends Model
         }
     }
 
+    //delete a track
     public function deleteTrack($id)
     {
         $firebase = FirebaseLib::getInstance();
@@ -39,7 +41,7 @@ class ModelTracks extends Model
 
     }
 
-
+    //update the track in the database
     public function updateTrack($id)
     {
 
@@ -52,7 +54,7 @@ class ModelTracks extends Model
 
     }
 
-
+    //get a track by his id
     public function getTrackById($id)
     {
 
@@ -89,10 +91,9 @@ class ModelTracks extends Model
                         array_push($diffs, new Difficulty($diff->gradient, $diff->name));
                     }
                 }
-                    $coordinate = new Coordinate($pod->coordinate->altitude, $pod->coordinate->date, $pod->coordinate->gdop, $pod->coordinate->latitude, $pod->coordinate->longitude, $pod->coordinate->nbre_sat);
-                    //ici créer un tab de difficulty
+                $coordinate = new Coordinate($pod->coordinate->altitude, $pod->coordinate->date, $pod->coordinate->gdop, $pod->coordinate->latitude, $pod->coordinate->longitude, $pod->coordinate->nbre_sat);
 
-                    array_push($pods, new Pod($coordinate, $pod->description, $pod->name, null, $diffs));
+                array_push($pods, new Pod($coordinate, $pod->description, $pod->name, null, $diffs));
 
             }
         }
