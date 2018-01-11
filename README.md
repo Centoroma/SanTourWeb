@@ -28,71 +28,66 @@ GPS emulator (if you want to use the android emulator)
 We build this project to follow a standard N-Tier architecture:
 ```
 
-app/
-├── manifests
-│    └── AndroidManifest.xml
-├── java
-│   ├── BLL
-│   │   ├── CoordinateManager
-│   │   ├── CurrentRecordingTrack
-│   │   ├── FirebaseClass
-│   │   ├── PODManager
-│   │   ├── POIManager
-│   │   └── TrackManager
-│   ├── ch.hes.santour
-│   │   ├── AboutFragment
-│   │   ├── CreatePodFragment
-│   │   ├── CreatePoiFragment
-│   │   ├── DetailsPodFragment
-│   │   ├── HomeFragment
-│   │   ├── ListPodAdapter
-│   │   ├── ListPodDifficulties
-│   │   ├── ListPoiAdapter
-│   │   ├── loginFragment
-│   │   ├── MainActivity
-│   │   ├── PodDifficultyViewHolder
-│   │   ├── PodViewHolder
-│   │   ├── PoiPodListFragment
-│   │   ├── SettingsFragment
-│   │   ├── UpdateDetailsPodFragment
-│   │   ├── UpdatePodFragment
-│   │   └── UpdatePoiFragment
-│   └── Models
-│   │   ├── Coordinate
-│   │   ├── Difficulty
-│   │   ├── POD
-│   │   ├── POI
-│   │   ├── Role
-│   │   ├── Track
-│   │   └── User
-└── res
-    ├── drawable
-    │   └── ...
-    ├── layout
-    │   ├── activity_main.xml
-    │   ├── details_row.xml
-    │   ├── fragment_about.xml
-    │   ├── fragment_create_pod.xml
-    │   ├── fragment_create_poi.xml
-    │   ├── fragment_details_pod.xml
-    │   ├── fragment_home.xml
-    │   ├── fragment_login.xml
-    │   ├── fragment_poi_pod_list.xml
-    │   ├── fragment_settings.xml
-    │   ├── fragment_update_details_pod.xml
-    │   ├── fragment_update_pod.xml
-    │   ├── fragment_update_poi.xml
-    │   └── pod_row.xml
-    ├── menu
-    │   └── ...
-    ├── mipmap
-    │   └── ...
-    └── values
-        ├── strings.xml
-            │   ├── strings.xml (en)
-            │   ├── strings.xml (de)
-            │   └── strings.xml (fr)
-        └── ...
+SanTourWeb/
+├── app
+│   ├── controller
+│   │   ├── ControllerCategories.php
+│   │   ├── ControllerIndex.php
+│   │   └── ControllerTracks.php
+│   ├── model
+│   │   ├── ModelCategories.php
+│   │   ├── ModelIndex.php
+│   │   └── ModelTracks.php
+│   └── view
+│       ├── _shared
+│       │   └── view-main.php
+│       ├── categories
+│       │   ├── view-add.php
+│       │   ├── view-edit.php
+│       │   └── view-index.php
+│       ├── index
+│       │   ├── view-home.php
+│       │   └── view-index.php
+│       └── tracks
+│           ├── view-details.php
+│           ├── view-edit.php
+│           └── view-index.php
+├── asset
+│   ├── css
+│   │   ├── icon.css
+│   │   └── ...
+│   ├── font
+│   │   └── roboto
+│   ├── image
+│   │   └── ..
+│   └── js
+│       ├── santourjs.js
+│       └── ...
+├── index.php
+└── library
+    ├── entity
+    │   ├── class.Category.php
+    │   ├── class.Coordinate.php
+    │   ├── class.Difficulty.php
+    │   ├── class.Pod.php
+    │   ├── class.Poi.php
+    │   ├── class.Track.php
+    │   ├── class.Category.php
+    │   └── class.User.php
+    ├── mvc
+    │   ├── class.Controller.php
+    │   ├── class.Model.php
+    │   └── class.View.php
+    ├── php
+    │   ├── class.FirebaseInterface.php
+    │   ├── class.FirebaseLib.php
+    │   └── class.FirebaseStub.php
+    ├── utils
+    │   ├── class.Redirect.php
+    │   └── class.Toast.php
+    ├── autoload.php
+    ├── class.router.php
+    └── function.php
 ```
 
 ## Navigation
