@@ -79,17 +79,21 @@ class ModelTracks extends Model
         $diffs = array();
         if (!empty($trackDB->pods)) {
             foreach ($podDB as $pod) {
+
+                $diffs = array();
                 if (!empty($pod->difficulties)) {
                     $diffDB = $pod->difficulties;
 
-                    $coordinate = new Coordinate($pod->coordinate->altitude, $pod->coordinate->date, $pod->coordinate->gdop, $pod->coordinate->latitude, $pod->coordinate->longitude, $pod->coordinate->nbre_sat);
-                    //ici créer un tab de difficulty
                     foreach ($diffDB as $diff) {
 
                         array_push($diffs, new Difficulty($diff->gradient, $diff->name));
                     }
-                    array_push($pods, new Pod($coordinate, $pod->description, $pod->name, null, $diffs));
                 }
+                    $coordinate = new Coordinate($pod->coordinate->altitude, $pod->coordinate->date, $pod->coordinate->gdop, $pod->coordinate->latitude, $pod->coordinate->longitude, $pod->coordinate->nbre_sat);
+                    //ici créer un tab de difficulty
+
+                    array_push($pods, new Pod($coordinate, $pod->description, $pod->name, null, $diffs));
+
             }
         }
 
