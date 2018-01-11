@@ -6,7 +6,8 @@
             </div>
             <div class="col s4">
                 <!-- waves-effect waves-light btn resa-btn -->
-                <a href="<?php echo ABSURL;?>/tracks/export?id=<?php echo $track->getId();?>" class="waves-effect waves-light btn resa-btn">export</a>
+                <a href="<?php echo ABSURL; ?>/tracks/export?id=<?php echo $track->getId(); ?>"
+                   class="waves-effect waves-light btn resa-btn">export</a>
             </div>
         </div>
     </div>
@@ -23,12 +24,12 @@
 
                 <div class="col s4">
                     <i class="material-icons small">alarm</i>
-                    <?php echo round(($track->getTimer()/1000)/60,2); ?>
+                    <?php echo round(($track->getTimer() / 1000) / 60, 2); ?>
                 </div>
 
                 <div class="col s4 ">
                     <i class="material-icons small">directions_walk</i>
-                    <?php echo $track->getLength(); ?>
+                    <?php echo $track->getLength(); ?> km
                 </div>
             </div>
         </div>
@@ -167,7 +168,7 @@
 
 
     <div class="row">
-        <div class="col m6">
+        <div class="col m6 vl">
             <div class="resa-title">
                 <h4>POI List</h4>
             </div>
@@ -192,10 +193,10 @@
 
                     $html .= '
                 <tr>
-                    <td>' . $poi->getCoordinate()->getLongitude() . ' / ' . $poi->getCoordinate()->getLatitude() . '</td>
+                    <td>' . round($poi->getCoordinate()->getLongitude(),2) . ' / ' . round($poi->getCoordinate()->getLatitude(),2) . '</td>
                     <td>' . $poi->getDescription() . '</td>
-                    <td>' . $poi->getName() . '</td> 
-                    <td><img src="https://firebasestorage.googleapis.com/v0/b/santour-75cf5.appspot.com/o/images%2F' . $track->getId() . '%2FPOI%2Fpicture' . $i . '.jpg?alt=media"></td>
+                    <td style="width: 100px;">' . $poi->getName() . '</td> 
+                    <td><img src="https://firebasestorage.googleapis.com/v0/b/santour-75cf5.appspot.com/o/images%2F' . $track->getId() . '%2FPOI%2Fpicture' . $i . '.jpg?alt=media" height="130px" width="130px"></td>
                               <!--https://firebasestorage.googleapis.com/v0/b/santour-75cf5.appspot.com/o/images%2F-L0yi3Z5sqLAfhhpHWXv%2FPOI%2Fpicture0.jpg?alt=media--> 
                     
             
@@ -228,6 +229,7 @@
                 <thead>
                 <tr>
                     <th>GPS</th>
+                    <th style="text-align: center">TYPE</th>
                     <th>DESCRIPTION</th>
                     <th>NAME</th>
                     <th>PHOTO</th>
@@ -242,15 +244,20 @@
 
                 foreach ($track->getPods() as $pod) {
 
-
                     $html .= '
-                <tr>
-                    <td>' . $pod->getCoordinate()->getLongitude() . ' / ' . $pod->getCoordinate()->getLatitude() . '</td>
-                    <td>' . $pod->getDescription() . '</td>
-                    <td>' . $pod->getName() . '</td>
-                <td><img src="https://firebasestorage.googleapis.com/v0/b/santour-75cf5.appspot.com/o/images%2F' . $track->getId() . '%2FPOD%2Fpicture' . $d . '.jpg?alt=media"></td>
-                      <!--      https://firebasestorage.googleapis.com/v0/b/santour-75cf5.appspot.com/o/images%2F-L0yi3Z5sqLAfhhpHWXv%2FPOD%2Fpicture0.jpg?alt=media-->
-                </tr>
+                    <tr>
+                        <td style="width: 150px;">' . round($pod->getCoordinate()->getLongitude(),2) . ' / ' . round($pod->getCoordinate()->getLatitude(),2) . '</td><td style="text-align: center">';
+
+                        foreach ($pod->getDifficulty() as $di) {
+                            $html .=  $di->getName() .'<br/>';
+                        }
+                        $html .= '
+                        </td>
+                        <td style="text-align: center">' . $pod->getDescription() . '</td>
+                        <td style="width: 100px;">' . $pod->getName() . '</td>
+                        <td><img src="https://firebasestorage.googleapis.com/v0/b/santour-75cf5.appspot.com/o/images%2F' . $track->getId() . '%2FPOD%2Fpicture' . $d . '.jpg?alt=media" height="130px" width="130px"></td>
+           
+                    </tr>
 
                 ';
                     $d++;

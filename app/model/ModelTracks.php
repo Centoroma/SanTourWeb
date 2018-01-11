@@ -9,6 +9,8 @@ use SanTourWeb\Library\Mvc\Model;
 use SanTourWeb\Library\Entity\Track;
 use SanTourWeb\Library\Php\FirebaseLib;
 use SanTourWeb\Library\Entity\Pod;
+use SanTourWeb\Library\Entity\Difficulty;
+
 
 class ModelTracks extends Model
 {
@@ -21,7 +23,7 @@ class ModelTracks extends Model
 
             foreach ($trackDB as $key => $track) {
 
-                array_push($tracks, new Track($key, $track->name, $track->length, $track->timer, null   ));
+                array_push($tracks, new Track($key, $track->name, $track->length, $track->timer, null));
             }
 
 
@@ -57,33 +59,41 @@ class ModelTracks extends Model
         $firebase = FirebaseLib::getInstance();
         $trackDB = json_decode($firebase->get('tracks/' . $id));
 
-        if(!empty($trackDB->pois)){
+        if (!empty($trackDB->pois)) {
             $poiDB = $trackDB->pois;
         }
-        if(!empty($trackDB->pods)){
+        if (!empty($trackDB->pods)) {
             $podDB = $trackDB->pods;
         }
-
 
         $coordDB = $trackDB->coordinates;
 
         $coords = array();
-        foreach ($coordDB as $coord){
-            $coordinate = new Coordinate($coord->altitude,$coord->date,$coord->gdop,$coord->latitude,$coord->longitude,$coord->nbre_sat);
+        foreach ($coordDB as $coord) {
+            $coordinate = new Coordinate($coord->altitude, $coord->date, $coord->gdop, $coord->latitude, $coord->longitude, $coord->nbre_sat);
             array_push($coords, $coordinate);
         }
 
 
         $pods = array();
-        if(!empty($trackDB->pods)) {
+        $diffs = array();
+        if (!empty($trackDB->pods)) {
             foreach ($podDB as $pod) {
+                $diffDB = $pod->difficulties;
+
                 $coordinate = new Coordinate($pod->coordinate->altitude, $pod->coordinate->date, $pod->coordinate->gdop, $pod->coordinate->latitude, $pod->coordinate->longitude, $pod->coordinate->nbre_sat);
-                array_push($pods, new Pod($coordinate, $pod->description, $pod->name, null));
+                //ici créer un tab de difficulty
+                foreach ($diffDB as $diff) {
+
+                    array_push($diffs, new Difficulty($diff->gradient, $diff->name));
+                }
+                array_push($pods, new Pod($coordinate, $pod->description, $pod->name, null, $diffs));
             }
+
         }
 
         $pois = array();
-        if(!empty($trackDB->pois)) {
+        if (!empty($trackDB->pois)) {
             foreach ($poiDB as $poi) {
                 $coordinate = new Coordinate($poi->coordinate->altitude, $poi->coordinate->date, $poi->coordinate->gdop, $poi->coordinate->latitude, $poi->coordinate->longitude, $poi->coordinate->nbre_sat);
                 array_push($pois, new Poi($coordinate, $poi->description, $poi->name, null));
@@ -94,7 +104,6 @@ class ModelTracks extends Model
         $track = new Track($id, $trackDB->name, $trackDB->length, $trackDB->timer, $coords);
         $track->setPods($pods);
         $track->setPois($pois);
-
 
 
         return $track;

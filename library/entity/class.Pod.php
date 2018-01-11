@@ -2,23 +2,26 @@
 
 namespace SanTourWeb\Library\Entity;
 
-class Pod {
+class Pod
+{
 
     private $coordinate;
     private $description;
     private $name;
     private $picture;
+    private $difficulty;
 
     /**
      * Pod constructor.
      * @param $name
      */
-    public function __construct( $coordinate,$description,$name,$picture)
+    public function __construct($coordinate, $description, $name, $picture, $difficulty)
     {
         $this->coordinate = $coordinate;
         $this->description = $description;
         $this->name = $name;
         $this->picture = $picture;
+        $this->difficulty = $difficulty;
     }
 
     /**
@@ -83,6 +86,22 @@ class Pod {
     public function setPicture($picture)
     {
         $this->picture = $picture;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDifficulty()
+    {
+        return $this->difficulty;
+    }
+
+    /**
+     * @param mixed $difficulty
+     */
+    public function setDifficulty($difficulty)
+    {
+        $this->difficulty = $difficulty;
     }
 
 
